@@ -16,7 +16,7 @@
 
     alessandrozinco2009.blgspot.com
 
-    <img src="public/img/bd.png">
+   
 
 
 ## About Laravel
