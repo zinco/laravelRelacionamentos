@@ -3,7 +3,7 @@
 
 
 @section('conteudo')
-
+<h1>vendas</h1>
 <table class="table">
 <thead class="thead-dark">
     <tr>

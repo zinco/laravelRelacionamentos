@@ -14,7 +14,11 @@ class ProdutoController extends Controller
      */
     public function index()
     {
-        //
+        $produtos =Produto::all();
+        
+        $title = "Lista Produtos";
+     //   dd($categorias);
+        return view('produto.index',compact('produtos','title'));
     }
 
     /**
@@ -24,7 +28,7 @@ class ProdutoController extends Controller
      */
     public function create()
     {
-        $qtdCat = Categoria::all()->count();//informa se tem dategorias cadastrado
+       
        
 
         $categoria = new Categoria;

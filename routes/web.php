@@ -26,3 +26,4 @@ Route::get('vendas/{vendas}/vendas_produtos', 'vendaController@vendas_produtos')
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/relatorio', 'VendaController@relatorio')->name('vendas.relatorio');

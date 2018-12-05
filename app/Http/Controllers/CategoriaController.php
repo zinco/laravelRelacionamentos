@@ -16,7 +16,10 @@ class CategoriaController extends Controller
      */
     public function index()
     {
-       return "ja tem a lista no formulario create";
+        $categoria = new Categoria();
+        $categorias = $categoria->all();
+        $title = "Lista Categorias";
+        return view('categoria.index',compact('categorias','title'));
     }
 
     /**

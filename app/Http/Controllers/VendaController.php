@@ -3,9 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\model\Categoria;
 use App\model\Produto;
 use App\model\Venda;
-
+use App\User;
 
 class VendaController extends Controller
 {
@@ -121,5 +122,14 @@ class VendaController extends Controller
 
         \Session::flash('flash_excluido',' Cadastro excluido com sucesso');
         return redirect()->back();
+    }
+
+    public function relatorio(){
+        $usuarios   =   User::all()->count();//informa se tem usuarios cadastrados
+        $categorias =   Categoria::all()->count();
+        $produtos   =   Produto::all()->count();
+        $vendas     =   Venda::all()->where('excluido', '=', '0')->count();
+
+        return view('venda.relatorio',compact('usuarios','categorias','produtos','vendas'));
     }
 }
